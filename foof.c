@@ -103,8 +103,7 @@ int ExisteLoopNaListaEQuantidadeDeNos(struct Lista lista, int *qtdNos)
       res = 1;
       break;
     }
-    slow = slow->prox;
-    fast = fast->prox->prox;
+    fast = fast->prox;
   }
   if (res == 1)
   {
