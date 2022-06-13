@@ -100,14 +100,22 @@ int ExisteLoopNaListaEQuantidadeDeNos(struct Lista lista, int *qtdNos)
   {
     if (slow == fast)
     {
-      return res = 1;
+      res = 1;
       break;
     }
-    quantidade++;
     slow = slow->prox;
     fast = fast->prox->prox;
   }
-  qtdNos = quantidade;
+  if (res == 1)
+  {
+    do
+    {
+      quantidade++;
+      slow = slow->prox;
+      fast = fast->prox->prox;
+    } while (slow != fast);
+  }
+  *qtdNos = quantidade;
   return res;
 }
 
