@@ -110,7 +110,6 @@ int ExisteLoopNaListaEQuantidadeDeNos(struct Lista lista, int *qtdNos)
     do
     {
       quantidade++;
-      slow = slow->prox;
       fast = fast->prox->prox;
     } while (slow != fast);
   }
